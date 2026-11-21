@@ -14,5 +14,11 @@ pipeline {
                 echo 'CloudCart source code downloaded successfully!'
             }
         }
+
+        stage('Docker Build') {
+            steps {
+                sh 'sudo docker build -t cloudcart:latest .'
+            }
+        }
     }
 }
